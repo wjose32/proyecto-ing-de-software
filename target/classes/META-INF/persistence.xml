@@ -2,13 +2,13 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="com.mycompany_ProyectoAyD2_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>A2.Proyecto.Entidades.Usuario</class>
-    <class>A2.Proyecto.Entidades.Proveedores</class>
-    <class>A2.Proyecto.Entidades.Clientes</class>
-    <class>A2.Proyecto.Entidades.Marca</class>
-    <class>A2.Proyecto.Entidades.Categoria</class>
-    <class>A2.Proyecto.Entidades.Producto</class>
-    <class>A2.Proyecto.Entidades.Cambiostock</class>
+    <class>S1.Proyecto.Entidades.Clientes</class>
+    <class>S1.Proyecto.Entidades.Proveedores</class>
+    <class>S1.Proyecto.Entidades.Cambiostock</class>
+    <class>S1.Proyecto.Entidades.Categoria</class>
+    <class>S1.Proyecto.Entidades.Producto</class>
+    <class>S1.Proyecto.Entidades.Usuario</class>
+    <class>S1.Proyecto.Entidades.Marca</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/baseferreteria?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
