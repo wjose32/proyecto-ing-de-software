@@ -5,7 +5,6 @@
  */
 package S1.Proyecto.Principal;
 
-
 import S1.Proyecto.Formularios.Registros.LlamarFormularios;
 /**
  *

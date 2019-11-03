@@ -12,7 +12,10 @@ package S1.Proyecto.FuncionesAuxiliares;
 public class ConvertirMayusculas {
     
     public static String ConvertirMayusculasPL(String cadena){
-        
+        //se estandariza la cadena a minusculas en caso
+        //en caso de dos mayusculas seguidas el ingresar los datos
+        cadena=ConvertirMinusculasC(cadena);
+        //se convierte a cadena de caracteres el string recibido
         char[] caracteres = cadena.toCharArray();
         caracteres[0] = Character.toUpperCase(caracteres[0]);
         
@@ -24,5 +27,12 @@ public class ConvertirMayusculas {
                 caracteres[i + 1] = Character.toUpperCase(caracteres[i + 1]);
         
         return new String(caracteres);
+    }
+    
+    private static String ConvertirMinusculasC(String cadena1){
+        
+        String cMins = cadena1.toLowerCase();
+        
+        return cMins;
     }
 }

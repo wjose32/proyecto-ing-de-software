@@ -7,6 +7,7 @@ package S1.Proyecto.Formularios.Registros;
 
 import S1.Proyecto.Controladores.ProveedoresJpaController;
 import S1.Proyecto.Entidades.Proveedores;
+import S1.Proyecto.FuncionesAuxiliares.Constantes;
 import javax.swing.JOptionPane;
  
 
@@ -220,7 +221,7 @@ public class RegistrarProveedor extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if ((c<'0'|| c>'9')) evt.consume();
         
-        if(teltxt.getText().length()==8){
+        if(teltxt.getText().length()==Constantes.tel){
             evt.consume();
         }
     }//GEN-LAST:event_teltxtKeyTyped

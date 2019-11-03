@@ -8,6 +8,7 @@ package S1.Proyecto.Formularios.Registros;
 import S1.Proyecto.FuncionesAuxiliares.CrearPasswordTemporal;
 import S1.Proyecto.FuncionesAuxiliares.CrearUsuario;
 import S1.Proyecto.FuncionesAuxiliares.ConvertirMayusculas;
+import S1.Proyecto.FuncionesAuxiliares.Constantes;
 
 import S1.Proyecto.Controladores.UsuarioJpaController;
 import S1.Proyecto.Entidades.Usuario;
@@ -118,6 +119,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         });
 
         teltxt.setText("jTextField4");
+        teltxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                teltxtActionPerformed(evt);
+            }
+        });
         teltxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 teltxtKeyTyped(evt);
@@ -306,7 +312,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if ((c<'0'|| c>'9')) evt.consume();
         
-        if(teltxt.getText().length()==8){
+        if(teltxt.getText().length()==Constantes.tel){
             evt.consume();
         }
     }//GEN-LAST:event_teltxtKeyTyped
@@ -320,6 +326,10 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if ((c<'a'|| c>'z') && (c<'A'||c>'Z') && (c<'-' || c>'-') && (c<'_'|| c>'_')&& (c<'.'|| c>'.')&& (c<'0'|| c>'9')&& (c<'@'|| c>'@')) evt.consume();
     }//GEN-LAST:event_emtxtKeyTyped
+
+    private void teltxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teltxtActionPerformed
+       
+    }//GEN-LAST:event_teltxtActionPerformed
 
     /**
      * @param args the command line arguments

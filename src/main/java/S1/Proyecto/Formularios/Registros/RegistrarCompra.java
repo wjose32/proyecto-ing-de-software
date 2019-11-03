@@ -288,7 +288,7 @@ public class RegistrarCompra extends javax.swing.JFrame {
                 desbloquear2();
 
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage());
+                JOptionPane.showMessageDialog(null, "PRODUCTO NO EXISTENTE \n"+"         Ingrese el Producto \n","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
             }
         }
     }//GEN-LAST:event_buscarActionPerformed
