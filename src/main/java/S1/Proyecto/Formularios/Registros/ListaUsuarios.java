@@ -7,6 +7,7 @@ package S1.Proyecto.Formularios.Registros;
 
 import S1.Proyecto.Controladores.UsuarioJpaController;
 import S1.Proyecto.Entidades.Usuario;
+import S1.Proyecto.FuncionesAuxiliares.Constantes;
 import S1.Proyecto.FuncionesAuxiliares.ConvertirMayusculas;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -279,7 +280,7 @@ public class ListaUsuarios extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if ((c<'0'|| c>'9')) evt.consume();
 
-        if(teltxt.getText().length()==8){
+        if(teltxt.getText().length()==Constantes.tel){
             evt.consume();
         }
     }//GEN-LAST:event_teltxtKeyTyped
