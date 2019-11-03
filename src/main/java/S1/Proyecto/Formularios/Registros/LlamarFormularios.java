@@ -86,7 +86,9 @@ public class LlamarFormularios {
         us.setVisible(true);
     }
     
-   
-    
+    public static void llamarCambioContraseña(){
+        CambioContraseña cc = new CambioContraseña();
+        cc.setVisible(true);
+    }
     
 }

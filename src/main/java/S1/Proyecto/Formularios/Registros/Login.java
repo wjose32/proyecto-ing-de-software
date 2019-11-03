@@ -7,6 +7,7 @@ package S1.Proyecto.Formularios.Registros;
 
 import S1.Proyecto.Controladores.UsuarioJpaController;
 import S1.Proyecto.Entidades.Usuario;
+import S1.Proyecto.FuncionesAuxiliares.CodificarContraseña;
 import javax.swing.JOptionPane;
  
 
@@ -94,15 +95,15 @@ public class Login extends javax.swing.JFrame {
                                     .addComponent(apellidotxt))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(passtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ustxt, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(passtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                    .addComponent(ustxt)))
                             .addComponent(jLabel5)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cerrar))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,25 +154,40 @@ public class Login extends javax.swing.JFrame {
                     UsuarioJpaController CUsuario = new UsuarioJpaController();
                     Usuario usuario = CUsuario.findUsuario(ustxt.getText());
                     
-                        if(usuario.getTipo()==2){
-                            //System.out.println(usuario.getPass());
+                    String passTemporal=CodificarContraseña.sha1(passtxt.getText());
+                    
+                    if(passTemporal.equals(usuario.getPass())){
+                        
+                        if(usuario.getNuevoUsuario()==1){
+                            JOptionPane.showMessageDialog(null, "DEBE ACUALIZAR SU CONTRASEÑA \n","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+                            LlamarFormularios.llamarCambioContraseña();
+                            CambioContraseña.lus.setText(ustxt.getText());
+                            dispose();
+                        }else{
+                            if(usuario.getTipo()==0){
+                             //System.out.println(usuario.getPass());
                             LlamarFormularios.llamarInvitado();
                             dispose();
-                        }
+                            }
+
+                            if(usuario.getTipo()==1){
+                                //System.out.println(usuario.getPass());
+                                LlamarFormularios.llamarAdmin();
+                                dispose();
+                            }
+                        }  
+                    }else{
+                        JOptionPane.showMessageDialog(null, "CONTRASEÑA INCORRECTA \n"+"           Vuelva a Intentarlo \n","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+                        passtxt.setText("");
+                        passtxt.requestFocus();
+                    }
                         
-                        if(usuario.getTipo()==1){
-                            //System.out.println(usuario.getPass());
-                            LlamarFormularios.llamarAdmin();
-                            dispose();
-                        }
                         
                         
-                    
-                    
-                    limpiar();
 
                 } catch (Exception e){
-                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    JOptionPane.showMessageDialog(null, "USUARIO INCORRECTO \n"+"      Vuelva a Intentarlo","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+                    limpiar();
                 }
             
             }
