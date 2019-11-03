@@ -7,8 +7,11 @@ package S1.Proyecto.Formularios.Registros;
 
 import S1.Proyecto.FuncionesAuxiliares.CrearPasswordTemporal;
 import S1.Proyecto.FuncionesAuxiliares.CrearUsuario;
+import S1.Proyecto.FuncionesAuxiliares.ConvertirMayusculas;
+
 import S1.Proyecto.Controladores.UsuarioJpaController;
 import S1.Proyecto.Entidades.Usuario;
+import S1.Proyecto.FuncionesAuxiliares.CodificarContraseña;
 import javax.swing.JOptionPane;
 
 import java.awt.datatransfer.*;
@@ -235,25 +238,33 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     //accion de insertar datos en la base de datos  
                     Usuario usuario = new Usuario();
                     UsuarioJpaController CUsuario = new UsuarioJpaController();
+                    
+                    String passtemporal="";
 
                     usuario.setUsuario(CrearUsuario.creaUsuario(nomtxt.getText(), aptxt.getText()));
                     
-                    usuario.setNombre(nomtxt.getText());
-                    usuario.setApellido(aptxt.getText());
-                    usuario.setDireccion(dirtxt.getText());
+                    usuario.setNombre(ConvertirMayusculas.ConvertirMayusculasPL(nomtxt.getText()));
+                    usuario.setApellido(ConvertirMayusculas.ConvertirMayusculasPL(aptxt.getText()));
+                    
+                    
+                    usuario.setDireccion(ConvertirMayusculas.ConvertirMayusculasPL(dirtxt.getText()));
                     usuario.setTelefono(teltxt.getText());
                     usuario.setEmail(emtxt.getText());
 
-                    usuario.setUsuario(CrearUsuario.creaUsuario(nomtxt.getText(), aptxt.getText()));
+                    usuario.setUsuario(CrearUsuario.creaUsuario(nomtxt.getText().toLowerCase(), aptxt.getText().toLowerCase()));
 
                     usuario.setPass(CrearPasswordTemporal.getPassword(
                                     CrearPasswordTemporal.MINUSCULAS
                                   + CrearPasswordTemporal.NUMEROS
                                   + CrearPasswordTemporal.MAYUSCULAS, 10));
-
-                    if (tipotxt.getSelectedItem().toString() == "Invitado") {
+                    
+                    passtemporal=usuario.getPass();
+                    
+                    usuario.setPass(CodificarContraseña.sha1(passtemporal));
+                    
+                    if (tipotxt.getSelectedItem().toString().equals("Invitado")) {
                         usuario.setTipo(0);
-                    } else if (tipotxt.getSelectedItem().toString() == "Administrador") {
+                    } else if (tipotxt.getSelectedItem().equals("Administrador")) {
                         usuario.setTipo(1);
                     }
 
@@ -262,16 +273,19 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     CUsuario.create(usuario);
                     
                     //copiar contraseña al portapapeles
-                    
-                    String myString = usuario.getPass();
+                    String myString = passtemporal;
                     StringSelection stringSelection = new StringSelection(myString);
                     Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
                     clpbrd.setContents(stringSelection, null);
-                    
                     ///////////////////////////////////
                     
                     
-                    javax.swing.JOptionPane.showMessageDialog(null,"Usuario:           "+usuario.getUsuario()+"\n"+"Contraseña:    "+usuario.getPass()+"\n"+"\n"+"La contraseña ha sido copiada al portapapeles temporalmente","USUARIO REGISTRADO",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.showMessageDialog(null,
+                            "Usuario:           "+usuario.getUsuario()+"\n"
+                           +"Contraseña:    "+passtemporal+"\n"
+                           +"\n"
+                           +"La contraseña temporal ha sido copiada al portapapeles",
+                            "USUARIO REGISTRADO",javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
                     limpiar();
 
