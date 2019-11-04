@@ -70,12 +70,16 @@ public class RegistrarProducto extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel1.setText("Nombre");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel2.setText("Precio");
 
+        marcatxt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         marcatxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Invitado", "Administrador" }));
 
+        nomtxt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         nomtxt.setText("jTextField1");
         nomtxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -83,7 +87,8 @@ public class RegistrarProducto extends javax.swing.JFrame {
             }
         });
 
-        registrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        registrar.setBackground(new java.awt.Color(0, 154, 154));
+        registrar.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         registrar.setText("Registrar");
         registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,8 +96,9 @@ public class RegistrarProducto extends javax.swing.JFrame {
             }
         });
 
-        cerrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cerrar.setText("CERRAR");
+        cerrar.setBackground(new java.awt.Color(229, 88, 100));
+        cerrar.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        cerrar.setText("Cerrar");
         cerrar.setAlignmentX(1.0F);
         cerrar.setAlignmentY(1.0F);
         cerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,17 +107,22 @@ public class RegistrarProducto extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("REGISTRO DE PRODUCTOS");
 
+        apellidotxt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         apellidotxt.setText("Marca");
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel6.setText("Categoria");
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel7.setText("Proveedor");
 
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel8.setText("Cantidad");
 
+        canttxt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         canttxt.setText("jTextField2");
         canttxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -119,10 +130,13 @@ public class RegistrarProducto extends javax.swing.JFrame {
             }
         });
 
+        provtxt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         provtxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        cattxt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         cattxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        precioxt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         precioxt.setText("jTextField1");
         precioxt.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -140,35 +154,32 @@ public class RegistrarProducto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel2)
-                            .addComponent(apellidotxt)
-                            .addComponent(jLabel6))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cattxt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(provtxt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nomtxt)
-                            .addComponent(marcatxt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(canttxt, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                                    .addComponent(precioxt))
-                                .addGap(61, 61, 61)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(registrar)
-                                    .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(60, 60, 60))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel5)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel2)
+                    .addComponent(apellidotxt)
+                    .addComponent(jLabel6))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(cattxt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(provtxt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nomtxt)
+                        .addComponent(marcatxt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(canttxt, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                .addComponent(precioxt))
+                            .addGap(61, 61, 61)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(registrar)
+                                .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(60, 60, 60))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

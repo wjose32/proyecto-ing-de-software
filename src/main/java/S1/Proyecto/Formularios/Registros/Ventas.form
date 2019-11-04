@@ -77,6 +77,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="registroB">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="9a" green="9a" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="ELIMINAR VENTAS"/>
       </Properties>
       <Events>
@@ -95,6 +98,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="usuariosB">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="9a" green="9a" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="CREARVENTAS"/>
       </Properties>
       <Events>
@@ -103,11 +109,17 @@
     </Component>
     <Component class="javax.swing.JButton" name="ventasB">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="9a" green="9a" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="LISTA DE VENTAS"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="64" green="58" red="e5" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="CERRAR"/>
       </Properties>
       <Events>

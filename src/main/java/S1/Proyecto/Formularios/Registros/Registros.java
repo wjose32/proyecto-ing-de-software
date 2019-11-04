@@ -40,6 +40,7 @@ public class Registros extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        registroB.setBackground(new java.awt.Color(0, 154, 154));
         registroB.setText("PRODUCTO");
         registroB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,6 +51,7 @@ public class Registros extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("REGISTROS");
 
+        usuariosB.setBackground(new java.awt.Color(0, 154, 154));
         usuariosB.setText("CLIENTE");
         usuariosB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +59,7 @@ public class Registros extends javax.swing.JFrame {
             }
         });
 
+        ventasB.setBackground(new java.awt.Color(0, 154, 154));
         ventasB.setText("PROVEEDOR");
         ventasB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +67,7 @@ public class Registros extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(0, 154, 154));
         jButton1.setText("CATEGORIA");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +75,7 @@ public class Registros extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(0, 154, 154));
         jButton2.setText("COMPRA");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +83,7 @@ public class Registros extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(0, 154, 154));
         jButton4.setText("MARCA");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +91,7 @@ public class Registros extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(229, 88, 100));
         jButton3.setText("CERRAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

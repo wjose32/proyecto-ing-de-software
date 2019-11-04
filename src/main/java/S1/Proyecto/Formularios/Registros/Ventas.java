@@ -37,6 +37,7 @@ public class Ventas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        registroB.setBackground(new java.awt.Color(0, 154, 154));
         registroB.setText("ELIMINAR VENTAS");
         registroB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,6 +48,7 @@ public class Ventas extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("VENTAS");
 
+        usuariosB.setBackground(new java.awt.Color(0, 154, 154));
         usuariosB.setText("CREARVENTAS");
         usuariosB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,8 +56,10 @@ public class Ventas extends javax.swing.JFrame {
             }
         });
 
+        ventasB.setBackground(new java.awt.Color(0, 154, 154));
         ventasB.setText("LISTA DE VENTAS");
 
+        jButton1.setBackground(new java.awt.Color(229, 88, 100));
         jButton1.setText("CERRAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

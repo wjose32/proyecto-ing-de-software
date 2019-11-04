@@ -65,6 +65,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
             }
         });
 
+        registrar.setBackground(new java.awt.Color(0, 154, 154));
         registrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         registrar.setText("Registrar");
         registrar.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +74,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
             }
         });
 
+        cerrar.setBackground(new java.awt.Color(229, 88, 100));
         cerrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cerrar.setText("CERRAR");
         cerrar.setAlignmentX(1.0F);

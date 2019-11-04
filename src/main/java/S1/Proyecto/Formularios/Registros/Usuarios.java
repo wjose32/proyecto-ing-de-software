@@ -37,6 +37,7 @@ public class Usuarios extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        registroB.setBackground(new java.awt.Color(0, 154, 154));
         registroB.setText("ELIMINAR USUARIO");
         registroB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,6 +48,7 @@ public class Usuarios extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("USUARIOS");
 
+        usuariosB.setBackground(new java.awt.Color(0, 154, 154));
         usuariosB.setText("CREAR USUARIOS");
         usuariosB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,8 +56,15 @@ public class Usuarios extends javax.swing.JFrame {
             }
         });
 
+        ventasB.setBackground(new java.awt.Color(0, 154, 154));
         ventasB.setText("LISTA DE USUARIOS");
+        ventasB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ventasBActionPerformed(evt);
+            }
+        });
 
+        jButton1.setBackground(new java.awt.Color(229, 88, 100));
         jButton1.setText("CERRAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +131,10 @@ public class Usuarios extends javax.swing.JFrame {
         LlamarFormularios.llamarAdmin();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ventasBActionPerformed
 
     /**
      * @param args the command line arguments

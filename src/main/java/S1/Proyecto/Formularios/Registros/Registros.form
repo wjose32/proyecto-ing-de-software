@@ -89,6 +89,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="registroB">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="9a" green="9a" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="PRODUCTO"/>
       </Properties>
       <Events>
@@ -107,6 +110,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="usuariosB">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="9a" green="9a" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="CLIENTE"/>
       </Properties>
       <Events>
@@ -115,6 +121,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="ventasB">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="9a" green="9a" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="PROVEEDOR"/>
       </Properties>
       <Events>
@@ -123,6 +132,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="9a" green="9a" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="CATEGORIA"/>
       </Properties>
       <Events>
@@ -131,6 +143,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="9a" green="9a" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="COMPRA"/>
       </Properties>
       <Events>
@@ -139,6 +154,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton4">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="9a" green="9a" red="0" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="MARCA"/>
       </Properties>
       <Events>
@@ -147,6 +165,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="64" green="58" red="e5" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="CERRAR"/>
       </Properties>
       <Events>
