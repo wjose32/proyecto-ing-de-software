@@ -38,11 +38,21 @@ public class Invitado extends javax.swing.JFrame {
         setUndecorated(true);
 
         registroB.setText("REGISTROS");
+        registroB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registroBActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("MENU PRINCIPAL");
 
         ventasB.setText("VENTAS");
+        ventasB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ventasBActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("CERRAR SESION");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +118,16 @@ public class Invitado extends javax.swing.JFrame {
         LlamarFormularios.llamarLogin();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void registroBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroBActionPerformed
+        LlamarFormularios.llamarRegistros();
+        dispose();
+    }//GEN-LAST:event_registroBActionPerformed
+
+    private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
+       LlamarFormularios.llamarRegistroVenta();
+       dispose();
+    }//GEN-LAST:event_ventasBActionPerformed
 
     /**
      * @param args the command line arguments

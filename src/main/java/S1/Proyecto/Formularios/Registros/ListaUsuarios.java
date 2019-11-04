@@ -346,7 +346,7 @@ public class ListaUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_aceptarActionPerformed
 
     private void cerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrar1ActionPerformed
-        LlamarFormularios.llamarAdmin();
+        LlamarFormularios.llamarUsuarios();
         dispose();
     }//GEN-LAST:event_cerrar1ActionPerformed
 

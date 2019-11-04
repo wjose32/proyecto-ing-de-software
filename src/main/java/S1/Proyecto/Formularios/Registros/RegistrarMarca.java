@@ -116,7 +116,7 @@ public class RegistrarMarca extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
-        LlamarFormularios.llamarAdmin();
+        LlamarFormularios.llamarRegistros();
         dispose();
     }//GEN-LAST:event_cerrarActionPerformed
 
