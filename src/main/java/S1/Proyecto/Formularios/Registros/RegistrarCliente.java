@@ -7,6 +7,8 @@ package S1.Proyecto.Formularios.Registros;
 
 import S1.Proyecto.Controladores.ClientesJpaController;
 import S1.Proyecto.Entidades.Clientes;
+import S1.Proyecto.FuncionesAuxiliares.Constantes;
+import S1.Proyecto.FuncionesAuxiliares.ConvertirMayusculas;
 import javax.swing.JOptionPane;
  
 
@@ -236,7 +238,8 @@ public class RegistrarCliente extends javax.swing.JFrame {
 
                   
                     clientes.setNit(Integer.parseInt(nittxt.getText()));
-                    clientes.setNombre(nomtxt.getText());
+                    clientes.setNombre(ConvertirMayusculas.ConvertirMayusculasPL(nomtxt.getText()));
+                    clientes.setApellido(ConvertirMayusculas.ConvertirMayusculasPL(aptxt.getText()));
                     clientes.setDireccion(dirtxt.getText());
                     clientes.setTelefono(teltxt.getText());
                     clientes.setEmail(emtxt.getText());
@@ -261,7 +264,7 @@ public class RegistrarCliente extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if ((c<'0'|| c>'9')) evt.consume();
         
-        if(teltxt.getText().length()==8){
+        if(teltxt.getText().length()==Constantes.tel){
             evt.consume();
         }
     }//GEN-LAST:event_teltxtKeyTyped
@@ -280,7 +283,7 @@ public class RegistrarCliente extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if ((c<'0'|| c>'9')) evt.consume();
         
-        if(teltxt.getText().length()==9){
+        if(nittxt.getText().length()==Constantes.nit){
             evt.consume();
         }
     }//GEN-LAST:event_nittxtKeyTyped

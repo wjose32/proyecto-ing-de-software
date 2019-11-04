@@ -162,7 +162,11 @@ public class Login extends javax.swing.JFrame {
 
     private void ustxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ustxtKeyTyped
         char c = evt.getKeyChar();
+<<<<<<< HEAD
         //if ((c<'a'|| c>'z')) evt.consume();
+=======
+        if ((c<'a'|| c>'z') && (c<'0'||c>'9')) evt.consume();
+>>>>>>> ebe9858927b703dfdd3c78544be11371fb74e17f
     }//GEN-LAST:event_ustxtKeyTyped
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
