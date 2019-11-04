@@ -70,8 +70,11 @@ public class Administracion extends javax.swing.JFrame {
         ventasB.setForeground(new java.awt.Color(255, 255, 255));
         ventasB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Total_Sales_100px.png"))); // NOI18N
         ventasB.setText("VENTAS");
+<<<<<<< HEAD
         ventasB.setAlignmentX(5.0F);
         ventasB.setAlignmentY(10.0F);
+=======
+>>>>>>> c448dac7f777dd305d2a157adaec9fcc4943d077
         ventasB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ventasBActionPerformed(evt);
@@ -151,8 +154,9 @@ public class Administracion extends javax.swing.JFrame {
                     .addComponent(usuariosB)
                     .addComponent(registroB)
                     .addComponent(ventasB))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel1)
+<<<<<<< HEAD
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
@@ -160,6 +164,13 @@ public class Administracion extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap())
+>>>>>>> c448dac7f777dd305d2a157adaec9fcc4943d077
         );
 
         pack();
@@ -186,7 +197,12 @@ public class Administracion extends javax.swing.JFrame {
     }//GEN-LAST:event_registroBActionPerformed
 
     private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
+=======
+        LlamarFormularios.llamarRegistroVenta();
+        dispose();
+>>>>>>> c448dac7f777dd305d2a157adaec9fcc4943d077
     }//GEN-LAST:event_ventasBActionPerformed
 
     /**

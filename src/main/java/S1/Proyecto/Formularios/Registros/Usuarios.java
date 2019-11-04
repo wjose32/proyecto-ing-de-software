@@ -133,7 +133,12 @@ public class Usuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
+=======
+        LlamarFormularios.llamarListausuarios();
+        dispose();
+>>>>>>> c448dac7f777dd305d2a157adaec9fcc4943d077
     }//GEN-LAST:event_ventasBActionPerformed
 
     /**

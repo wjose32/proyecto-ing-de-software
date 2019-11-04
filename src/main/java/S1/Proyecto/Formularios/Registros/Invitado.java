@@ -43,6 +43,11 @@ public class Invitado extends javax.swing.JFrame {
         registroB.setForeground(new java.awt.Color(255, 255, 255));
         registroB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Order_History_100px_2.png"))); // NOI18N
         registroB.setText("REGISTROS");
+        registroB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registroBActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -53,6 +58,11 @@ public class Invitado extends javax.swing.JFrame {
         ventasB.setForeground(new java.awt.Color(255, 255, 255));
         ventasB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Total_Sales_100px.png"))); // NOI18N
         ventasB.setText("VENTAS");
+        ventasB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ventasBActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(0, 188, 242));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -147,6 +157,16 @@ public class Invitado extends javax.swing.JFrame {
         LlamarFormularios.llamarLogin();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void registroBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroBActionPerformed
+        LlamarFormularios.llamarRegistros();
+        dispose();
+    }//GEN-LAST:event_registroBActionPerformed
+
+    private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
+       LlamarFormularios.llamarRegistroVenta();
+       dispose();
+    }//GEN-LAST:event_ventasBActionPerformed
 
     /**
      * @param args the command line arguments

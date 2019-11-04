@@ -91,4 +91,8 @@ public class LlamarFormularios {
         cc.setVisible(true);
     }
     
+    public static void llamarListausuarios(){
+        ListaUsuarios lu = new ListaUsuarios();
+        lu.setVisible(true);
+    }
 }
