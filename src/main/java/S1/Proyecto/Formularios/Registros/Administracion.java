@@ -38,6 +38,7 @@ public class Administracion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         registroB.setBackground(new java.awt.Color(0, 154, 154));
         registroB.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -49,10 +50,13 @@ public class Administracion extends javax.swing.JFrame {
                 registroBActionPerformed(evt);
             }
         });
+        getContentPane().add(registroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 220, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ADMINISTRACION");
+        jLabel2.setText("Administración");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 90, -1, -1));
 
         usuariosB.setBackground(new java.awt.Color(0, 154, 154));
         usuariosB.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -64,46 +68,41 @@ public class Administracion extends javax.swing.JFrame {
                 usuariosBActionPerformed(evt);
             }
         });
+        getContentPane().add(usuariosB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 220, 110));
 
         ventasB.setBackground(new java.awt.Color(0, 154, 154));
         ventasB.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         ventasB.setForeground(new java.awt.Color(255, 255, 255));
         ventasB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/icons8_Total_Sales_100px.png"))); // NOI18N
         ventasB.setText("VENTAS");
-<<<<<<< HEAD
-        ventasB.setAlignmentX(5.0F);
-        ventasB.setAlignmentY(10.0F);
-=======
->>>>>>> c448dac7f777dd305d2a157adaec9fcc4943d077
         ventasB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ventasBActionPerformed(evt);
             }
         });
+        getContentPane().add(ventasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 220, 110));
 
         jButton1.setBackground(new java.awt.Color(0, 188, 242));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("CERRAR SESION");
-        jButton1.setMaximumSize(new java.awt.Dimension(140, 30));
-        jButton1.setMinimumSize(new java.awt.Dimension(140, 30));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, 50));
 
         jButton2.setBackground(new java.awt.Color(229, 88, 100));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("CERRAR");
-        jButton2.setMaximumSize(new java.awt.Dimension(140, 30));
-        jButton2.setMinimumSize(new java.awt.Dimension(140, 30));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 130, 50));
 
         jPanel1.setBackground(new java.awt.Color(43, 61, 83));
 
@@ -111,67 +110,14 @@ public class Administracion extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addGap(0, 770, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 293, Short.MAX_VALUE)
+            .addGap(0, 290, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(usuariosB)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(registroB)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ventasB)
-                .addContainerGap(32, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(199, 199, 199))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usuariosB)
-                    .addComponent(registroB)
-                    .addComponent(ventasB))
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1)
-<<<<<<< HEAD
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(32, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap())
->>>>>>> c448dac7f777dd305d2a157adaec9fcc4943d077
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 290));
 
         pack();
         setLocationRelativeTo(null);
@@ -197,16 +143,8 @@ public class Administracion extends javax.swing.JFrame {
     }//GEN-LAST:event_registroBActionPerformed
 
     private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
-<<<<<<< HEAD
-<<<<<<< HEAD
-        // TODO add your handling code here:
-=======
-        LlamarFormularios.llamarRegistroVenta();
-=======
         LlamarFormularios.llamarVentas();
->>>>>>> eae21629fb5333b72aed8dd653c17ce725232722
         dispose();
->>>>>>> c448dac7f777dd305d2a157adaec9fcc4943d077
     }//GEN-LAST:event_ventasBActionPerformed
 
     /**
