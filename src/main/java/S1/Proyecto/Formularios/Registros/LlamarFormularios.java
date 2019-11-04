@@ -9,6 +9,10 @@ package S1.Proyecto.Formularios.Registros;
  *
  * @author WELLINGTON
  */
+
+//clase que contiene todos los metodos para invocar
+//a los formularios y evitar crear sentencias en cada
+//formulario, por cada form que se necesite
 public class LlamarFormularios {
     
     public static void llamarRegistros(){

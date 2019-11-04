@@ -224,7 +224,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_nomtxtKeyTyped
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        
+        //se verifica que no existan campos vacios
         if((nomtxt.getText().equals("")) || (aptxt.getText().equals("")) || 
                (dirtxt.getText().equals("")) || (teltxt.getText().equals("")) || 
                (emtxt.getText().equals("") )){
@@ -246,9 +246,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     UsuarioJpaController CUsuario = new UsuarioJpaController();
                     
                     String passtemporal="";
-
+                    //se genera usuario de la persona a ingresar
+                    //en base a nombre y apellido
                     usuario.setUsuario(CrearUsuario.creaUsuario(nomtxt.getText(), aptxt.getText()));
                     
+                    //se estandariza el nombre y apellido
+                    //colocando en mayusculas la primera letra de cada palabra
+                    //sin importar como lo escriba el usuario
                     usuario.setNombre(ConvertirMayusculas.ConvertirMayusculasPL(nomtxt.getText()));
                     usuario.setApellido(ConvertirMayusculas.ConvertirMayusculasPL(aptxt.getText()));
                     
@@ -256,9 +260,14 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     usuario.setDireccion(ConvertirMayusculas.ConvertirMayusculasPL(dirtxt.getText()));
                     usuario.setTelefono(teltxt.getText());
                     usuario.setEmail(emtxt.getText());
-
+                    
+                    //se crear el nombre de usuario
+                    //en base al nombre y apellido
+                    //enviando las cadenas en minusculas
                     usuario.setUsuario(CrearUsuario.creaUsuario(nomtxt.getText().toLowerCase(), aptxt.getText().toLowerCase()));
-
+                    
+                    //se genera contraseña temporal con minusaculas, mayusculas
+                    //y numeros aleatorios, de una longitud de 10 caracteres
                     usuario.setPass(CrearPasswordTemporal.getPassword(
                                     CrearPasswordTemporal.MINUSCULAS
                                   + CrearPasswordTemporal.NUMEROS
@@ -266,16 +275,22 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     
                     passtemporal=usuario.getPass();
                     
+                    //se encripta la contraseña para tener mayor seguridad
                     usuario.setPass(CodificarContraseña.sha1(passtemporal));
                     
+                    //se asigna privilegios de usuario
                     if (tipotxt.getSelectedItem().toString().equals("Invitado")) {
                         usuario.setTipo(0);
                     } else if (tipotxt.getSelectedItem().equals("Administrador")) {
                         usuario.setTipo(1);
                     }
-
+                    
+                    //se indica que es nuevo usuario
+                    //para que proceda al cambio de contraseña generadp
+                    //la primera vez que inicie sesion
                     usuario.setNuevoUsuario(1);
-
+                    
+                    //se crea el registro
                     CUsuario.create(usuario);
                     
                     //copiar contraseña al portapapeles
@@ -285,7 +300,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     clpbrd.setContents(stringSelection, null);
                     ///////////////////////////////////
                     
-                    
+                    //se lanza la alerta con nombre de usuario y contraseña creados
                     javax.swing.JOptionPane.showMessageDialog(null,
                             "Usuario:           "+usuario.getUsuario()+"\n"
                            +"Contraseña:    "+passtemporal+"\n"
@@ -384,6 +399,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> tipotxt;
     // End of variables declaration//GEN-END:variables
 
+    
+    //metodo para limpiar los campos
 private void limpiar() {                                          
 
         nomtxt.setText("");

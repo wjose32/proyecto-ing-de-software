@@ -205,7 +205,7 @@ public class RegistrarCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_cprodtxtKeyTyped
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        
+        //verificacion de campos vacios
         if ((canttxt.getText().equals(""))) {
             javax.swing.JOptionPane.showMessageDialog(this, "Debe Ingresar una cantidad \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
@@ -219,26 +219,34 @@ public class RegistrarCompra extends javax.swing.JFrame {
                 //accion de insertar datos en la base de datos  
                 Cambiostock cambiostock = new Cambiostock();
                 CambiostockJpaController CCambiostock = new CambiostockJpaController();
-
+                
+                //se cuentan la cantidad de datos ingresados para la generacion del id
                 int ultimo = CCambiostock.getCambiostockCount();
                 //System.out.println(ultimo);
+                
+                //se crea el id de la compra
                 cambiostock.setCodigo(ultimo + 1);
                 cambiostock.setCodigoProducto(cprodtxt.getText());
                 cambiostock.setCantidad(Integer.parseInt(canttxt.getText()));
                 cambiostock.setTipo("Compra");
                 
                 cambiostock.setFecha(fechasis());
-                
+                //se ingresa la compra
                 CCambiostock.create(cambiostock);
                 javax.swing.JOptionPane.showMessageDialog(null, "REGISTRO EXITOSO\n", "COMPRAS", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 ///////////////////////////////////////////////////////////////////////
                 //////////////////////////////////////////////////////////////////////
+                
+                //se realiza la busqueda de la compra realizada
+                //para la modificacion de inventario
                 ProductoJpaController CProducto = new ProductoJpaController();
                 Producto producto = CProducto.findProducto(cprodtxt.getText());
                 
+                //se suma la cantidad de compra a la cantidad existente
                 int cantidadAux=producto.getCantidad()+Integer.parseInt(canttxt.getText());
                 producto.setCantidad(cantidadAux);
                 
+                //se edita el inventario
                 CProducto.edit(producto);
                 
                 limpiar();
@@ -266,6 +274,7 @@ public class RegistrarCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_canttxtKeyTyped
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+        //se verifica que no exista campos en blanco
         if ((cprodtxt.getText().equals(""))) {
 
             javax.swing.JOptionPane.showMessageDialog(this, "INGRESE UN CODIGO \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -276,11 +285,13 @@ public class RegistrarCompra extends javax.swing.JFrame {
             }
         } else {
             try {
-
+                //se realiza la busqueda del producto a modificar
                 ProductoJpaController CProducto = new ProductoJpaController();
                 Producto producto = CProducto.findProducto(cprodtxt.getText());
 
                 desbloquear();
+                //se obtienen los datos a guardar y se almacenan
+                //en una estructura temporal
                 nomprodtxt.setText(producto.getNombre());
                 provtxt.setText(producto.getProveedor());
                 marctxt.setText(producto.getMarca());
@@ -288,6 +299,7 @@ public class RegistrarCompra extends javax.swing.JFrame {
                 desbloquear2();
 
             } catch (Exception e) {
+                //si el producto no existe se lanza una alerta
                 JOptionPane.showMessageDialog(null, "PRODUCTO NO EXISTENTE \n"+"         Ingrese el Producto \n","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
             }
         }
@@ -346,6 +358,8 @@ public class RegistrarCompra extends javax.swing.JFrame {
     private javax.swing.JButton registrar;
     // End of variables declaration//GEN-END:variables
 
+    
+    //metodo para limpiar los campos
 private void limpiar() {                                          
 
         cprodtxt.setText("");
@@ -357,6 +371,7 @@ private void limpiar() {
         cprodtxt.requestFocus();      
 }
 
+//metodo para bloquear los campos
 private void bloquear() { 
     
         nomprodtxt.setEnabled(false);
@@ -368,6 +383,7 @@ private void bloquear() {
       
 }
 
+//metodo para desbloquear los campos existentes
 private void desbloquear() { 
     
         nomprodtxt.setEnabled(true);
@@ -379,6 +395,8 @@ private void desbloquear() {
       
 }
 
+//metodo para desbloquear campos
+//al realizar una compra
 private void desbloquear2() { 
    
         canttxt.setEnabled(true);
@@ -387,6 +405,9 @@ private void desbloquear2() {
         canttxt.requestFocus();
 }
 
+
+//metodo para obtener la fecha del sistema
+//y registrar la fecha en la que se realiza la compra
 public Date fechasis() {
     java.util.Date date = new Date();
     java.sql.Date fechaActual = new java.sql.Date(date.getTime());

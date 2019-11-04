@@ -8,6 +8,8 @@ package S1.Proyecto.Formularios.Registros;
 /**
  *
  * @author WELLINGTON
+ * 
+ * formulario para usuarios sin privilegios de administrador
  */
 public class Invitado extends javax.swing.JFrame {
 

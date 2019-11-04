@@ -144,7 +144,7 @@ public class Administracion extends javax.swing.JFrame {
     }//GEN-LAST:event_registroBActionPerformed
 
     private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
-        LlamarFormularios.llamarRegistroVenta();
+        LlamarFormularios.llamarVentas();
         dispose();
     }//GEN-LAST:event_ventasBActionPerformed
 
