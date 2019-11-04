@@ -193,6 +193,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
+        LlamarFormularios.llamarAdmin();
         dispose();
     }//GEN-LAST:event_cerrarActionPerformed
 

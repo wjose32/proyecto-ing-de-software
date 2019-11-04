@@ -56,6 +56,11 @@ public class Administracion extends javax.swing.JFrame {
         });
 
         ventasB.setText("VENTAS");
+        ventasB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ventasBActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("CERRAR SESION");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -106,9 +111,9 @@ public class Administracion extends javax.swing.JFrame {
                     .addComponent(usuariosB)
                     .addComponent(registroB)
                     .addComponent(ventasB))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
@@ -137,6 +142,11 @@ public class Administracion extends javax.swing.JFrame {
         LlamarFormularios.llamarRegistros();
         dispose();
     }//GEN-LAST:event_registroBActionPerformed
+
+    private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
+        LlamarFormularios.llamarRegistroVenta();
+        dispose();
+    }//GEN-LAST:event_ventasBActionPerformed
 
     /**
      * @param args the command line arguments
