@@ -9,6 +9,8 @@ package S1.Proyecto.Formularios.Registros;
  *
  * @author WELLINGTON
  */
+
+//formulario del menu del modulo de usuarios
 public class Usuarios extends javax.swing.JFrame {
 
     /**

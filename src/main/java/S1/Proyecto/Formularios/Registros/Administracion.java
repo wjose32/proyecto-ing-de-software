@@ -198,9 +198,13 @@ public class Administracion extends javax.swing.JFrame {
 
     private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
 <<<<<<< HEAD
+<<<<<<< HEAD
         // TODO add your handling code here:
 =======
         LlamarFormularios.llamarRegistroVenta();
+=======
+        LlamarFormularios.llamarVentas();
+>>>>>>> eae21629fb5333b72aed8dd653c17ce725232722
         dispose();
 >>>>>>> c448dac7f777dd305d2a157adaec9fcc4943d077
     }//GEN-LAST:event_ventasBActionPerformed

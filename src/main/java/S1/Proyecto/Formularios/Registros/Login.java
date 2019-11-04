@@ -194,7 +194,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_ustxtKeyTyped
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
-        
+        // se verifica que todos los campos esten llenos
         if((ustxt.getText().equals("")) || (passtxt.getText().equals(""))){
                 
                 javax.swing.JOptionPane.showMessageDialog(this,"Debe llenar todos los campos \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -205,20 +205,30 @@ public class Login extends javax.swing.JFrame {
             }
             else{
                 try {
-                    
+                    //se busca el usuario ingresado para poder realizar
+                    //la autenticacion
                     UsuarioJpaController CUsuario = new UsuarioJpaController();
                     Usuario usuario = CUsuario.findUsuario(ustxt.getText());
                     
                     String passTemporal=CodificarContraseña.sha1(passtxt.getText());
-                    
+                    //se verifica que la contraseña ingresada sea la correcta
                     if(passTemporal.equals(usuario.getPass())){
-                        
+                        //si el usuario ingresa por primera vez al sistema
+                        //este le solicita que actualice la contraseña generada
+                        //por el sistema, a una ingresada por el usuario
                         if(usuario.getNuevoUsuario()==1){
                             JOptionPane.showMessageDialog(null, "DEBE ACUALIZAR SU CONTRASEÑA \n","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+                            //se invoca al formulario de cambio de contraseña
                             LlamarFormularios.llamarCambioContraseña();
+                            //se enviaa el nombre de usuario al form de cambio de contraseña
                             CambioContraseña.lus.setText(ustxt.getText());
                             dispose();
                         }else{
+                            
+                            //si no es la primera vez que el usuario ingresa
+                            //se procede a verificar si el usuario tiene
+                            //privilegios de administrador, o no
+                            //y se muestra el form correspondiente
                             if(usuario.getTipo()==0){
                              //System.out.println(usuario.getPass());
                             LlamarFormularios.llamarInvitado();
@@ -232,6 +242,8 @@ public class Login extends javax.swing.JFrame {
                             }
                         }  
                     }else{
+                        
+                        //si la contraseña no es correcta se muestra la alerta
                         JOptionPane.showMessageDialog(null, "CONTRASEÑA INCORRECTA \n"+"           Vuelva a Intentarlo \n","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
                         passtxt.setText("");
                         passtxt.requestFocus();
@@ -241,6 +253,7 @@ public class Login extends javax.swing.JFrame {
                         
 
                 } catch (Exception e){
+                    //si el usuario no es correcto, o no existe se muestra la alerta
                     JOptionPane.showMessageDialog(null, "USUARIO INCORRECTO \n"+"      Vuelva a Intentarlo","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
                     limpiar();
                 }
@@ -299,6 +312,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField ustxt;
     // End of variables declaration//GEN-END:variables
 
+    //metodo para limpiar los campos
 private void limpiar() {                                          
         ustxt.setText("");
         passtxt.setText("");

@@ -39,7 +39,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         nomtxt = new javax.swing.JTextField();
-        registrar = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
         cerrar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         apellidotxt = new javax.swing.JLabel();
@@ -50,8 +50,12 @@ public class EliminarUsuario extends javax.swing.JFrame {
         dirtxt = new javax.swing.JTextField();
         teltxt = new javax.swing.JTextField();
         emtxt = new javax.swing.JTextField();
+<<<<<<< HEAD
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+=======
+        buscar = new javax.swing.JButton();
+>>>>>>> eae21629fb5333b72aed8dd653c17ce725232722
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -68,6 +72,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         registrar.setBackground(new java.awt.Color(0, 188, 242));
         registrar.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         registrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,8 +80,13 @@ public class EliminarUsuario extends javax.swing.JFrame {
         registrar.setMaximumSize(new java.awt.Dimension(87, 29));
         registrar.setMinimumSize(new java.awt.Dimension(87, 29));
         registrar.addActionListener(new java.awt.event.ActionListener() {
+=======
+        eliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        eliminar.setText("ELIMINAR");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> eae21629fb5333b72aed8dd653c17ce725232722
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registrarActionPerformed(evt);
+                eliminarActionPerformed(evt);
             }
         });
 
@@ -92,9 +102,14 @@ public class EliminarUsuario extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("REGISTRO DE USUARIOS");
+=======
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setText("ELIMINACION DE USUARIOS");
+>>>>>>> eae21629fb5333b72aed8dd653c17ce725232722
 
         apellidotxt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         apellidotxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,13 +163,19 @@ public class EliminarUsuario extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         jButton1.setBackground(new java.awt.Color(0, 154, 154));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("BUSCAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
+=======
+        buscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        buscar.setText("BUSCAR");
+        buscar.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> eae21629fb5333b72aed8dd653c17ce725232722
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buscarActionPerformed(evt);
             }
         });
 
@@ -187,6 +208,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
                             .addComponent(jLabel8))
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                             .addComponent(nomtxt)
                             .addComponent(dirtxt)
                             .addGroup(layout.createSequentialGroup()
@@ -207,6 +229,38 @@ public class EliminarUsuario extends javax.swing.JFrame {
                                 .addComponent(cerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(registrar, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
+=======
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(apellidotxt)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nomtxt)
+                                    .addComponent(dirtxt)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(emtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(eliminar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(teltxt, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(aptxt, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cerrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(11, 11, 11))))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+>>>>>>> eae21629fb5333b72aed8dd653c17ce725232722
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -231,6 +285,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(teltxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                     .addComponent(jLabel7))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -245,6 +300,22 @@ public class EliminarUsuario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                    .addComponent(jLabel7)
+                    .addComponent(buscar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cerrar)
+                .addGap(0, 19, Short.MAX_VALUE))
+>>>>>>> eae21629fb5333b72aed8dd653c17ce725232722
         );
 
         pack();
@@ -261,21 +332,21 @@ public class EliminarUsuario extends javax.swing.JFrame {
         if ((c<'a'|| c>'z') && (c<'A'||c>'Z') && (c<' ' || c>' ') && (c<'ñ' || c>'ñ') && (c<'Ñ' || c>'Ñ')) evt.consume();
     }//GEN-LAST:event_nomtxtKeyTyped
 
-    private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
         
         try {
             UsuarioJpaController CUsuario = new UsuarioJpaController();
-            Usuario usuario = CUsuario.findUsuario(nomtxt.getText());
-            
+            //si el usuario existe se elimina de la BD
             CUsuario.destroy(nomtxt.getText());
             javax.swing.JOptionPane.showMessageDialog(null,"Usuario Eliminado\n","USUARIO",javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            
+            //se limpian los campos, para una nueva busqueda
             limpiar();
         } catch (NonexistentEntityException ex) {
+            //javax.swing.JOptionPane.showMessageDialog(null,"EL USUARIO NO EXISTE\n","USUARIO",javax.swing.JOptionPane.WARNING_MESSAGE);
             Logger.getLogger(EliminarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_registrarActionPerformed
+    }//GEN-LAST:event_eliminarActionPerformed
 
     private void aptxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aptxtKeyTyped
         char c = evt.getKeyChar();
@@ -301,34 +372,38 @@ public class EliminarUsuario extends javax.swing.JFrame {
         if ((c<'a'|| c>'z') && (c<'A'||c>'Z') && (c<'-' || c>'-') && (c<'_'|| c>'_')&& (c<'.'|| c>'.')&& (c<'0'|| c>'9')&& (c<'@'|| c>'@')) evt.consume();
     }//GEN-LAST:event_emtxtKeyTyped
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
         if((nomtxt.getText().equals(""))){
                 
-                javax.swing.JOptionPane.showMessageDialog(this,"Debe llenar todos los campos \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this,"No se permiten campos en blanco \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 
-                //coloca el cursor en el campo en blanc
+                //coloca el cursor en el campo en blanco
                 if(nomtxt.getText().equals("")){nomtxt.requestFocus();}
             }
             else{
                  
                 try {
-                    //accion de insertar datos en la base de datos  
+                    //accion para buscar el usuario a eliminar 
                     UsuarioJpaController CUsuario = new UsuarioJpaController();
                     Usuario usuario = CUsuario.findUsuario(nomtxt.getText());
                     
-
+                    //se obtienen los datos del usuario buscadp
+                    //para corroborar que se trata del usuario correcto
                     aptxt.setText(usuario.getApellido());
                     dirtxt.setText(usuario.getDireccion());
                     teltxt.setText(usuario.getTelefono());
                     emtxt.setText(usuario.getEmail());
-                     
+                    //se habilita el boton de eliminar
+                    eliminar.setEnabled(true);
 
                 } catch (Exception e){
-                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    javax.swing.JOptionPane.showMessageDialog(null,"EL USUARIO NO EXISTE\n","USUARIO",javax.swing.JOptionPane.WARNING_MESSAGE);
+                    limpiar();
+                    //JOptionPane.showMessageDialog(null, e.getMessage());
                 }
             
             }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,10 +444,11 @@ public class EliminarUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel apellidotxt;
     private javax.swing.JTextField aptxt;
+    private javax.swing.JButton buscar;
     private javax.swing.JButton cerrar;
     private javax.swing.JTextField dirtxt;
+    private javax.swing.JButton eliminar;
     private javax.swing.JTextField emtxt;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -380,7 +456,6 @@ public class EliminarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nomtxt;
-    private javax.swing.JButton registrar;
     private javax.swing.JTextField teltxt;
     // End of variables declaration//GEN-END:variables
 
@@ -391,7 +466,7 @@ private void limpiar() {
         dirtxt.setText("");
         teltxt.setText("");
         emtxt.setText("");
-        
+        eliminar.setEnabled(false);
         
         nomtxt.requestFocus();      
 }

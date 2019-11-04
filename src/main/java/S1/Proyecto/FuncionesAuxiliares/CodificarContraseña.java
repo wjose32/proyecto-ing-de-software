@@ -12,7 +12,8 @@ import java.security.NoSuchAlgorithmException;
  *
  * @author WELLINGTON
  */
-public class CodificarContraseña {   
+public class CodificarContraseña { 
+    //algoritmo SHA1 para la encriptacion de contraseñas
     public static String sha1(String input) throws NoSuchAlgorithmException {
         MessageDigest mDigest = MessageDigest.getInstance("SHA1");
         byte[] result = mDigest.digest(input.getBytes());

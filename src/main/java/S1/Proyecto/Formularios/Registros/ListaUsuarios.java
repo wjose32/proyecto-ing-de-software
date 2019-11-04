@@ -354,7 +354,9 @@ public class ListaUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_emtxtKeyTyped
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
-
+        //Se verifica que los campos no esten vacios antes de hacer una modificacion
+        //si algun campo esta vacio, se lanza una notficacion
+        //y se coloca el cursor en el campo vacio
         if((ustxt.getText().equals("")||(nomtxt.getText().equals("")) || (aptxt.getText().equals("")) ||
             (dirtxt.getText().equals("")) || (teltxt.getText().equals("")) ||
             (emtxt.getText().equals("")))){
@@ -372,10 +374,12 @@ public class ListaUsuarios extends javax.swing.JFrame {
         else{
 
             try {
-                //accion de insertar datos en la base de datos
+                //se realiza la busqueda del usuario a modificar
                 UsuarioJpaController CUsuario = new UsuarioJpaController();
                 Usuario usuario = CUsuario.findUsuario(ustxt.getText());
-                
+                //se almacenan los datos nuevos a la estructura "usuario"
+                //para poder enviar dicha estructura, al metododo editar
+                //y modificar el usuario
                 usuario.setUsuario(ustxt.getText());
                 usuario.setNombre(ConvertirMayusculas.ConvertirMayusculasPL(nomtxt.getText()));
                 usuario.setApellido(ConvertirMayusculas.ConvertirMayusculasPL(aptxt.getText()));
@@ -390,7 +394,8 @@ public class ListaUsuarios extends javax.swing.JFrame {
                 }
 
                 CUsuario.edit(usuario);
-                
+                //se lanza una alerta, del proceso concluido con exito
+                //se limpian los campos y se prepara todo para una nueva busqueda
                 javax.swing.JOptionPane.showMessageDialog(this,"DATOS ACTUALIZADOS \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 limpiar();
                 bloquear();
@@ -414,6 +419,9 @@ public class ListaUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_aptxtKeyTyped
 
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+        //evento que permite colocar los datos de la tabla
+        //en los campos correspondientes, al hacer clic en
+        //en una fila de la tabla
         int select = table.getSelectedRow();
         ustxt.setText(table.getValueAt(select, 0)+"");
         nomtxt.setText(table.getValueAt(select, 1)+"");
@@ -492,16 +500,23 @@ public class ListaUsuarios extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private static void listarUsuarios(){
+        //se listan los usuarios existentes
+        //y se llena una tabla con la informacion de cada usuario
+        //para una mejor lectura de dichos datos
         UsuarioJpaController CUsuario = new UsuarioJpaController();
+        //se cuentan los usuarios existentes, para tener la informacion en pantalla
         Integer cu = CUsuario.getUsuarioCount();
-        
+        //titulos de tabla
         String[] titulo = {"USUARIO","NOMBRE","APELLIDO","DIRECCION","TELEFONO","EMAIL","TIPO"};
         
         DefaultTableModel model =new DefaultTableModel(null,titulo);
-        
+        //metodo que lista los usuarios existentes, 
+        //metodo existente del jpa controller
         List<Usuario> datos = CUsuario.findUsuarioEntities();
         
+        //se crea un arreglo para guardar la informacion requerida de cada usuario
         String[] datosUsuario = new String[7];
+        //for each que coloca los datos de los usuarios existentes en una estructura
         for (Usuario us : datos) {
             datosUsuario[0] = us.getUsuario();
             datosUsuario[1] = us.getNombre();
@@ -514,13 +529,17 @@ public class ListaUsuarios extends javax.swing.JFrame {
             }else if(us.getTipo()==1){
                 datosUsuario[6] = "Administrador";
             }
+            //agregan los datos a la tabla
             model.addRow(datosUsuario);
         }
-        
+        //se asigna el modelo creado a la tabla
+        //para presentar la informacion requerida
         table.setModel(model);
+        //se presenta el total de usuarios en pantalla
         totalus.setText(cu+"");
     }
     
+    //metodo, para limpiar los campos, para realizar una modificacion
     private void limpiar() {                                               
         ustxt.setText("");
         nomtxt.setText("");
@@ -531,6 +550,8 @@ public class ListaUsuarios extends javax.swing.JFrame {
         tipotxt.setSelectedItem(0);   
     }
     
+    //metodo de bloqueo de campos para evitar errores
+    //de usuarios, y editar usuarios por error
     private void bloquear() {                                               
         ustxt.setEnabled(false);
         nomtxt.setEnabled(false);
@@ -541,6 +562,7 @@ public class ListaUsuarios extends javax.swing.JFrame {
         tipotxt.setEnabled(false);
     }
     
+    //meotodo de desbloqueo de campos para edicion
     private void desbloquear() {                                               
         nomtxt.setEnabled(true);
         aptxt.setEnabled(true);

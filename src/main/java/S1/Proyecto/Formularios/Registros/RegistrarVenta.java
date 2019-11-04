@@ -195,7 +195,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
-        LlamarFormularios.llamarAdmin();
+        LlamarFormularios.llamarVentas();
         dispose();
     }//GEN-LAST:event_cerrarActionPerformed
 
@@ -205,7 +205,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_cprodtxtKeyTyped
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        
+        //se verifica que no existan campos vacios
         if ((canttxt.getText().equals(""))) {
             javax.swing.JOptionPane.showMessageDialog(this, "Debe Ingresar una cantidad \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
@@ -219,26 +219,36 @@ public class RegistrarVenta extends javax.swing.JFrame {
                 //accion de insertar datos en la base de datos  
                 Cambiostock cambiostock = new Cambiostock();
                 CambiostockJpaController CCambiostock = new CambiostockJpaController();
-
+                
+                //se obtiene la cantidad de datos existentes
                 int ultimo = CCambiostock.getCambiostockCount();
                 //System.out.println(ultimo);
+                
+                //se asigna id a la venta
                 cambiostock.setCodigo(ultimo + 1);
+                
                 cambiostock.setCodigoProducto(cprodtxt.getText());
                 cambiostock.setCantidad(Integer.parseInt(canttxt.getText()));
                 cambiostock.setTipo("Venta");
                 
+                //se obtiene la fecha del sistema
                 cambiostock.setFecha(fechasis());
                 
                 CCambiostock.create(cambiostock);
                 javax.swing.JOptionPane.showMessageDialog(null, "REGISTRO EXITOSO\n", "VENTAS", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 ///////////////////////////////////////////////////////////////////////
                 //////////////////////////////////////////////////////////////////////
+                
+                //se realiza la busqueda del producto a vender
                 ProductoJpaController CProducto = new ProductoJpaController();
                 Producto producto = CProducto.findProducto(cprodtxt.getText());
                 
+                //se modifica la existencia del producto restando de inventario
                 int cantidadAux=producto.getCantidad()-Integer.parseInt(canttxt.getText());
                 producto.setCantidad(cantidadAux);
                 
+                
+                //se registra la modificacion de inventario
                 CProducto.edit(producto);
                 
                 limpiar();
@@ -266,6 +276,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_canttxtKeyTyped
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+        //se verifica que no existan campos vacios
         if ((cprodtxt.getText().equals(""))) {
 
             javax.swing.JOptionPane.showMessageDialog(this, "INGRESE UN CODIGO \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -276,11 +287,12 @@ public class RegistrarVenta extends javax.swing.JFrame {
             }
         } else {
             try {
-
+                //se busca el producto
                 ProductoJpaController CProducto = new ProductoJpaController();
                 Producto producto = CProducto.findProducto(cprodtxt.getText());
-
+                
                 desbloquear();
+                //una vez obtenido el producto se muestra la informacion correspondiente
                 nomprodtxt.setText(producto.getNombre());
                 provtxt.setText(producto.getProveedor());
                 marctxt.setText(producto.getMarca());
@@ -348,6 +360,8 @@ public class RegistrarVenta extends javax.swing.JFrame {
     private javax.swing.JButton registrar;
     // End of variables declaration//GEN-END:variables
 
+    
+    //metodo para limpiear compos existentes
 private void limpiar() {                                          
 
         cprodtxt.setText("");
@@ -359,6 +373,7 @@ private void limpiar() {
         cprodtxt.requestFocus();      
 }
 
+//bloquea campos existentes
 private void bloquear() { 
     
         nomprodtxt.setEnabled(false);
@@ -369,7 +384,7 @@ private void bloquear() {
         registrar.setEnabled(false);
       
 }
-
+//desbloquea campos existentes
 private void desbloquear() { 
     
         nomprodtxt.setEnabled(true);
@@ -381,6 +396,7 @@ private void desbloquear() {
       
 }
 
+//desbloquea campos existentes para realizar la venta
 private void desbloquear2() { 
    
         canttxt.setEnabled(true);
@@ -389,6 +405,7 @@ private void desbloquear2() {
         canttxt.requestFocus();
 }
 
+//obtiene la fecha del sistema en que se realiza la transaccion
 public Date fechasis() {
     java.util.Date date = new Date();
     java.sql.Date fechaActual = new java.sql.Date(date.getTime());

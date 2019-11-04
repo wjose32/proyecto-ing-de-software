@@ -23,6 +23,7 @@ import javax.swing.JOptionPane;
  * @author WELLINGTON
  */
 public class RegistrarProducto extends javax.swing.JFrame {
+    //se instancian los controladores
     MarcaJpaController CMarca = new MarcaJpaController();
     CategoriaJpaController CCategoria = new CategoriaJpaController();
     ProveedoresJpaController CProveedor = new ProveedoresJpaController();
@@ -230,7 +231,7 @@ public class RegistrarProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_nomtxtKeyTyped
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        
+        //se verifica que no existan campos vacios antes del registro
         if((nomtxt.getText().equals("")) || (canttxt.getText().equals("")) || 
                (precioxt.getText().equals("") )){
                 
@@ -247,12 +248,16 @@ public class RegistrarProducto extends javax.swing.JFrame {
                     //accion de insertar datos en la base de datos  
                     Producto producto = new Producto();
                     ProductoJpaController CProducto = new ProductoJpaController();
-                    
+                    //se obtiene el nombre del item seleccionado
+                    //en los combo box
                     String marcaAux=marcatxt.getSelectedItem().toString();
                     String categoriaAux=cattxt.getSelectedItem().toString();
                     String proveedorAux=provtxt.getSelectedItem().toString();
                     
-                    producto.setCodigo(CrearCodigo.creaCodigoProducto(nomtxt.getText(), marcaAux, proveedorAux));
+                    //se genera el codigo del producto con base al nombre
+                    //marca, categoria y un numero aleatorio
+                    producto.setCodigo(CrearCodigo.creaCodigoProducto(nomtxt.getText(), marcaAux, categoriaAux));
+                    
                     producto.setNombre(nomtxt.getText());
                     producto.setMarca(marcaAux);
                     producto.setCategoria(categoriaAux);
@@ -261,6 +266,7 @@ public class RegistrarProducto extends javax.swing.JFrame {
                     producto.setEstado("En Stock");
                     producto.setPrecio(Float.parseFloat(precioxt.getText()));
                     
+                    //se ingresa el producto
                     CProducto.create(producto);
                     javax.swing.JOptionPane.showMessageDialog(null,"PRODUCTO REGISTRADO\n","REGISTRO",javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
@@ -343,6 +349,8 @@ public class RegistrarProducto extends javax.swing.JFrame {
     private javax.swing.JButton registrar;
     // End of variables declaration//GEN-END:variables
 
+    
+    //metodo para limpiar los campos existentes
 private void limpiar() {                                          
 
         nomtxt.setText("");
@@ -356,7 +364,8 @@ private void limpiar() {
         
         nomtxt.requestFocus();      
 }
-
+    //metodo para cargar a los combobox
+    //la informacion de marca, categoria y proveedor
     private void cargarInfo() {
 
         try {
@@ -366,13 +375,14 @@ private void limpiar() {
                 //System.out.println(""+listM.get(i).getNombre());
                 marcatxt.addItem(listM.get(i).getNombre());
             }
-            
+            //Llenacombox de categorias existentes
             List<Categoria> listC = CCategoria.findCategoriaEntities();
             for(int i=0;i<listC.size();i++){
                 //System.out.println(""+listM.get(i).getNombre());
                 cattxt.addItem(listC.get(i).getNombre());
             }
             
+            //Llenacombox de proveedores existentes
             List<Proveedores> listP = CProveedor.findProveedoresEntities();
             for(int i=0;i<listP.size();i++){
                 //System.out.println(""+listM.get(i).getNombre());

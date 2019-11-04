@@ -178,7 +178,7 @@ public class RegistrarProveedor extends javax.swing.JFrame {
     }//GEN-LAST:event_nomtxtKeyTyped
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        
+        //se verifica que no existan campos vacios
         if((nomtxt.getText().equals("")) || 
            (dirtxt.getText().equals("")) || 
            (teltxt.getText().equals("")) || 
@@ -197,15 +197,20 @@ public class RegistrarProveedor extends javax.swing.JFrame {
                     //accion de insertar datos en la base de datos  
                     Proveedores proveedor = new Proveedores();
                     ProveedoresJpaController CProveedor = new ProveedoresJpaController();
-
+                    
+                    //se obtiene la cantidad de datos existentes
                     int ultimo = CProveedor.getProveedoresCount();
-                    System.out.println(ultimo);
+                    //System.out.println(ultimo);
+                    
+                    //se genera el id del proveedor a ingresar
                     proveedor.setId(ultimo + 1);
+                    
                     proveedor.setNombre(nomtxt.getText());
                     proveedor.setDireccion(dirtxt.getText());
                     proveedor.setTelefono(teltxt.getText());
                     proveedor.setEmail(emtxt.getText());
-
+                    
+                    //se crear el registro de proveedor
                     CProveedor.create(proveedor);
                     javax.swing.JOptionPane.showMessageDialog(this,"PROVEEDOR REGISTRADO \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);                
                     limpiar();
@@ -288,6 +293,7 @@ public class RegistrarProveedor extends javax.swing.JFrame {
     private javax.swing.JTextField teltxt;
     // End of variables declaration//GEN-END:variables
 
+    //metodo para limpiar los campos existentes
 private void limpiar() {                                          
 
         nomtxt.setText("");
