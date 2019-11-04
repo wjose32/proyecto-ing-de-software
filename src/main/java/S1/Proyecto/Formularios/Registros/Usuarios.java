@@ -55,6 +55,11 @@ public class Usuarios extends javax.swing.JFrame {
         });
 
         ventasB.setText("LISTA DE USUARIOS");
+        ventasB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ventasBActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("CERRAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +127,11 @@ public class Usuarios extends javax.swing.JFrame {
         LlamarFormularios.llamarAdmin();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ventasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasBActionPerformed
+        LlamarFormularios.llamarListausuarios();
+        dispose();
+    }//GEN-LAST:event_ventasBActionPerformed
 
     /**
      * @param args the command line arguments
