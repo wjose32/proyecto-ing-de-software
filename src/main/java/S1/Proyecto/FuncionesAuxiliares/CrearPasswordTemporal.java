@@ -10,26 +10,28 @@ package S1.Proyecto.FuncionesAuxiliares;
  * @author WELLINGTON
  */
 public class CrearPasswordTemporal {
+//    constantes que se utilizan para la creacion de codigo
+//    de usuarios, proveedores, productos y contraseña
+    public static final String NUMEROS = "0123456789";
+ 
+    public static final String MAYUSCULAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ 
+    public static final String MINUSCULAS = "abcdefghijklmnopqrstuvwxyz";
+ 
     
-    public static String NUMEROS = "0123456789";
- 
-    public static String MAYUSCULAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
- 
-    public static String MINUSCULAS = "abcdefghijklmnopqrstuvwxyz";
- 
-	//
     public static String getPinNumber() {
 	return getPassword(NUMEROS, 4);
     }
- 
+    //metodo que envia la longitud requerida del pass
     public static String getPassword() {
         return getPassword(8);
     }
- 
+    //metodo que envia la cadena de numeros y letras, con la longitud requerida
     public static String getPassword(int length) {
         return getPassword(NUMEROS + MAYUSCULAS + MINUSCULAS, length);
     }
- 
+    //metodo para generar una cadena con letras y numeros, de longitud aleatoria
+    //para la creacion de contraseña temporal
     public static String getPassword(String key, int length) {
         String pswd = "";
         

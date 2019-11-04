@@ -212,7 +212,8 @@ public class RegistrarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_nomtxtKeyTyped
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        
+        //se verifica que no exista ningun campo vacio 
+        //antes de realizar el ingreso
         if((nittxt.getText().equals(""))||(nomtxt.getText().equals("")) || (aptxt.getText().equals("")) || 
                (dirtxt.getText().equals("")) || (teltxt.getText().equals("")) || 
                (emtxt.getText().equals("") )){
@@ -238,8 +239,12 @@ public class RegistrarCliente extends javax.swing.JFrame {
 
                   
                     clientes.setNit(Integer.parseInt(nittxt.getText()));
+                    //se estandariza el ingreso de nombre y apellido
+                    //colocando la primera letra de cada palabra 
+                    //a mayuscula
                     clientes.setNombre(ConvertirMayusculas.ConvertirMayusculasPL(nomtxt.getText()));
                     clientes.setApellido(ConvertirMayusculas.ConvertirMayusculasPL(aptxt.getText()));
+                    
                     clientes.setDireccion(dirtxt.getText());
                     clientes.setTelefono(teltxt.getText());
                     clientes.setEmail(emtxt.getText());
@@ -342,6 +347,8 @@ public class RegistrarCliente extends javax.swing.JFrame {
     private javax.swing.JTextField teltxt;
     // End of variables declaration//GEN-END:variables
 
+    
+    //metodo para limpiar los campos
 private void limpiar() {                                          
 
         nittxt.setText("");

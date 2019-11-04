@@ -9,6 +9,8 @@ package S1.Proyecto.Formularios.Registros;
  *
  * @author WELLINGTON
  */
+
+//Menu del modulo de registros
 public class Registros extends javax.swing.JFrame {
 
     /**

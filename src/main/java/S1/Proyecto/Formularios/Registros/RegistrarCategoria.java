@@ -126,7 +126,7 @@ public class RegistrarCategoria extends javax.swing.JFrame {
     }//GEN-LAST:event_nomtxtKeyTyped
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        
+        //se verifica que el campo tenga un nombre de marca
         if(((nomtxt.getText().equals("")))){
                  
             javax.swing.JOptionPane.showMessageDialog(this,"DEBE ESCRIBIR UN NOMBRE DE MARCA \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -141,10 +141,10 @@ public class RegistrarCategoria extends javax.swing.JFrame {
                 //accion de insertar datos en la base de datos  
                 Categoria categoria = new Categoria();
                 CategoriaJpaController CCategoria = new CategoriaJpaController();
-          
+                //se genera un codigo para la categoria
                 categoria.setCodigo(CrearCodigo.creaCodigo(nomtxt.getText()));
                 categoria.setNombre(nomtxt.getText().toUpperCase());
-                
+                //se almacena la categoria
                 CCategoria.create(categoria);
                 javax.swing.JOptionPane.showMessageDialog(null,"Codigo:           "+categoria.getCodigo()+"\n"+"Nombre:    "+categoria.getNombre()+"\n","CATEGORIA REGISTRADA",javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 limpiar();
@@ -206,6 +206,7 @@ public class RegistrarCategoria extends javax.swing.JFrame {
     private javax.swing.JButton registrar;
     // End of variables declaration//GEN-END:variables
 
+    //metodo para limpiar los campos
 private void limpiar() {                                          
  
         nomtxt.setText("");

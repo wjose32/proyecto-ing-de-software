@@ -142,7 +142,9 @@ public class CambioContraseña extends javax.swing.JFrame {
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
         UsuarioJpaController CUsuario = new UsuarioJpaController();
         Usuario usuario = CUsuario.findUsuario(lus.getText());
-        
+        // se verifica que ningun campo este vacio
+        //en caso contrario, se envia una alerta
+        //y se coloca el cursor en el campo vacio
         if((passActual.getText().equals(""))||
            (passNew.getText().equals(""))||
            (PassNew2.getText().equals(""))){
@@ -153,17 +155,25 @@ public class CambioContraseña extends javax.swing.JFrame {
             if(PassNew2.getText().equals("")){PassNew2.requestFocus();}
             if(passNew.getText().equals("")){passNew.requestFocus();}
             if(passActual.getText().equals("")){passActual.requestFocus();}
+        ///////////////////////////////////////////////
         }else{
             try {
+                
+                //se codifica la contraseña actual ingresada, 
+                //para comparar con la almacenada 
                 String passTemporal = CodificarContraseña.sha1(passActual.getText());
                 
                 if(passTemporal.equals(usuario.getPass())){
-                    
+                    //si la contraseña temporal es correcta se procede
+                    //a compara que la contraseña nueva, sea confirmada
+                    //(igual)en ambos campos 
                     if(CompararContraseñas.ConfirmarPass(passNew.getPassword(),PassNew2.getPassword())){
                         usuario.setPass(CodificarContraseña.sha1(PassNew2.getText()));
                         usuario.setNuevoUsuario(0);
                         
                         try {
+                            //se actualiza la informacion del usuario
+                            //y se indica que el usuario debe iniciar sesion de nuevo
                             CUsuario.edit(usuario);
                             JOptionPane.showMessageDialog(null, "CONTRASEÑA ACTUALIZADA \n"+"   Inicie Sesión Nuevamente","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
                             LlamarFormularios.llamarLogin();
@@ -172,10 +182,14 @@ public class CambioContraseña extends javax.swing.JFrame {
                             Logger.getLogger(CambioContraseña.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }else{
+                        //si las contraseñas no coinciden, se lanza una alerta
+                        //y se deben ingresar de nuevo
                         JOptionPane.showMessageDialog(null, "LAS CONTRASEÑAS NO COINCIDEN \n","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
                         limpiar2();
                     }
                 }else{
+                    //si la contraseña temporal actual no es correcta
+                    //se lanza la alerta correspondiente
                     JOptionPane.showMessageDialog(null, "CONTRASEÑA ACTUAL INCORRECTA \n"+"              Vuelva a Intentarlo \n","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
                 }
             } catch (NoSuchAlgorithmException ex) {
@@ -233,6 +247,7 @@ public class CambioContraseña extends javax.swing.JFrame {
     private javax.swing.JPasswordField passNew;
     // End of variables declaration//GEN-END:variables
 
+    //metodo para limpiar los campos de texto
     private void limpiar() {                                          
         lus.setText("");
         passActual.setText("");
@@ -242,6 +257,7 @@ public class CambioContraseña extends javax.swing.JFrame {
         passActual.requestFocus();      
     }
     
+    //metodo para limpiar los campos de contraseña nueva
     private void limpiar2() {                                          
         
         passNew.setText("");

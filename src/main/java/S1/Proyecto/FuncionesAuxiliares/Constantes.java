@@ -10,6 +10,9 @@ package S1.Proyecto.FuncionesAuxiliares;
  * @author WELLINGTON
  */
 public class Constantes {
+    //constantes utilizadas en las restricciones
+    //de los campos como nit y telefono de los diferentes formularios
+    //en caso de aumentar, evitando asi la modificacion de varios formularios
     public static final int nit = 9;
     public static final int tel = 8;
 }

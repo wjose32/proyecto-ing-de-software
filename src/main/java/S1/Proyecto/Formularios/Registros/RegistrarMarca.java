@@ -126,7 +126,7 @@ public class RegistrarMarca extends javax.swing.JFrame {
     }//GEN-LAST:event_nomtxtKeyTyped
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        
+        //se verifica que los campos no esten vacios
         if(((nomtxt.getText().equals("")))){
                  
             javax.swing.JOptionPane.showMessageDialog(this,"DEBE ESCRIBIR UN NOMBRE DE MARCA \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -141,8 +141,9 @@ public class RegistrarMarca extends javax.swing.JFrame {
                 //accion de insertar datos en la base de datos  
                 Marca marca = new Marca();
                 MarcaJpaController CMarca = new MarcaJpaController();
-          
+                //se genera el codigo de la marca en base al nombre
                 marca.setCodigo(CrearCodigo.creaCodigo(nomtxt.getText()));
+                //se estandariza el nombre de la marca colocandolo en mayusculas
                 marca.setNombre(nomtxt.getText().toUpperCase());
                 
                 CMarca.create(marca);
@@ -202,6 +203,8 @@ public class RegistrarMarca extends javax.swing.JFrame {
     private javax.swing.JButton registrar;
     // End of variables declaration//GEN-END:variables
 
+    
+    //metodo para limpiar el campo
 private void limpiar() {                                          
  
         nomtxt.setText("");

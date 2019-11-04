@@ -10,7 +10,8 @@ package S1.Proyecto.FuncionesAuxiliares;
  * @author WELLINGTON
  */
 public class CompararContraseñas {
-    
+    //metodo para comparar que las contraseñas ingresadas por el usuario coincidan
+    //al momento de cambiar las contraseñas para nuevos usuarios
     public static boolean ConfirmarPass(char[] j1,char[] j2) {
         boolean valor = true;
         int puntero = 0;
